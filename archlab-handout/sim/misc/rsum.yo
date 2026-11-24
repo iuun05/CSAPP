@@ -1,0 +1,39 @@
+0x000:                      | .pos 0
+0x000: 30f40002000000000000 |     irmovq stack, %rsp    # 必须是第一条执行的指令！
+0x00a: 801400000000000000   |     call main
+0x013: 00                   |     halt
+                            | 
+0x014:                      | main:
+0x014: 30f76800000000000000 |     irmovq ele1, %rdi       # 将链表头地址作为第一个参数传给 %rdi
+0x01e: 802800000000000000   |     call rsum_list
+0x027: 90                   |     ret
+                            | 
+0x028:                      | rsum_list:
+0x028: 6277                 | 	andq %rdi, %rdi
+0x02a: 735700000000000000   | 	je	L6
+0x033: a03f                 | 	pushq	%rbx
+0x035: 50370000000000000000 | 	mrmovq	(%rdi), %rbx
+0x03f: 50770800000000000000 | 	mrmovq	8(%rdi), %rdi
+0x049: 802800000000000000   | 	call	rsum_list
+0x052: 6030                 | 	addq	%rbx, %rax
+0x054: b03f                 | 	popq	%rbx
+0x056: 90                   | 	ret
+0x057:                      | L6:
+0x057: 30f00000000000000000 | 	irmovq	$0, %rax
+0x061: 90                   | 	ret
+                            | 
+                            | # Sample linked list
+0x068:                      |     .align 8
+0x068:                      | ele1:
+0x068: 0a00000000000000     |     .quad 0x00a
+0x070: 7800000000000000     |     .quad ele2
+0x078:                      | ele2:
+0x078: b000000000000000     |     .quad 0x0b0
+0x080: 8800000000000000     |     .quad ele3
+0x088:                      | ele3:
+0x088: 000c000000000000     |     .quad 0xc00
+0x090: 0000000000000000     |     .quad 0
+                            | 
+                            | # 放在代码和数据之后的安全高地址（例如 0x200）
+0x200:                      |     .pos 0x200
+0x200:                      | stack:

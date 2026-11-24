@@ -1,0 +1,113 @@
+=== Testing trace01.txt ===
+trace01 PASSED
+=== Testing trace02.txt ===
+trace02 PASSED
+=== Testing trace03.txt ===
+trace03 PASSED
+=== Testing trace04.txt ===
+trace04 PASSED
+=== Testing trace05.txt ===
+trace05 PASSED
+=== Testing trace06.txt ===
+trace06 PASSED
+=== Testing trace07.txt ===
+trace07 PASSED
+=== Testing trace08.txt ===
+trace08 PASSED
+=== Testing trace09.txt ===
+trace09 PASSED
+=== Testing trace10.txt ===
+trace10 PASSED
+=== Testing trace11.txt ===
+--- /dev/fd/63	2026-11-10 14:37:12.017425832 +0800
++++ /dev/fd/62	2026-11-10 14:37:12.017425832 +0800
+@@ -51,6 +51,6 @@
+  894065 pts/2    Sl+    0:28 /home/liurun/.vscode-server/extensions/ms-vscode.cpptools-1.35.6-linux-x64/bin/cpptools-srv 586070 {E6330E5E-E945-4080-8FCC-3E9D985F108A}
+  936975 pts/8    S+     0:00 bash testall.sh
+  936976 pts/8    S+     0:00 tee res.log
+- 937838 pts/8    S+     0:00 /usr/bin/perl ./sdriver.pl -t trace11.txt -s ./tsh -a -p
+- 937839 pts/8    S+     0:00 ./tsh -p
+- 937859 pts/8    R      0:00 /bin/ps a
++ 937860 pts/8    S+     0:00 /usr/bin/perl ./sdriver.pl -t trace11.txt -s ./tshref -a -p
++ 937861 pts/8    S+     0:00 ./tshref -p
++ 937910 pts/8    R      0:00 /bin/ps a
+=== Testing trace12.txt ===
+--- /dev/fd/63	2026-11-10 14:37:16.051704579 +0800
++++ /dev/fd/62	2026-11-10 14:37:16.051704579 +0800
+@@ -21,7 +21,7 @@
+  585600 pts/2    S+     0:00 sh -c "$VSCODE_WSL_EXT_LOCATION/scripts/wslServer.sh" c4453f8ea430795f941c1b2ff6c9321135a74a02 stable code-server .vscode-server --host=127.0.0.1 --port=0 --connection-token=1761344009-2230041557-177547242-1149610843 --use-host-proxy --without-browser-env-var --disable-websocket-compression --accept-server-license-terms --telemetry-level=all
+  585601 pts/2    S+     0:00 sh /mnt/c/Users/86188/.vscode/extensions/ms-vscode-remote.remote-wsl-1.104.7/scripts/wslServer.sh c4453f8ea430795f941c1b2ff6c9321135a74a02 stable code-server .vscode-server --host=127.0.0.1 --port=0 --connection-token=1761344009-2230041557-177547242-1149610843 --use-host-proxy --without-browser-env-var --disable-websocket-compression --accept-server-license-terms --telemetry-level=all
+  585607 pts/2    S+     0:00 sh /home/liurun/.vscode-server/bin/c4453f8ea430795f941c1b2ff6c9321135a74a02/bin/code-server --host=127.0.0.1 --port=0 --connection-token=1761344009-2230041557-177547242-1149610843 --use-host-proxy --without-browser-env-var --disable-websocket-compression --accept-server-license-terms --telemetry-level=all
+- 585611 pts/2    Sl+    0:27 /home/liurun/.vscode-server/bin/c4453f8ea430795f941c1b2ff6c9321135a74a02/node /home/liurun/.vscode-server/bin/c4453f8ea430795f941c1b2ff6c9321135a74a02/out/server-main.js --host=127.0.0.1 --port=0 --connection-token=1761344009-2230041557-177547242-1149610843 --use-host-proxy --without-browser-env-var --disable-websocket-compression --accept-server-license-terms --telemetry-level=all
++ 585611 pts/2    Rl+    0:27 /home/liurun/.vscode-server/bin/c4453f8ea430795f941c1b2ff6c9321135a74a02/node /home/liurun/.vscode-server/bin/c4453f8ea430795f941c1b2ff6c9321135a74a02/out/server-main.js --host=127.0.0.1 --port=0 --connection-token=1761344009-2230041557-177547242-1149610843 --use-host-proxy --without-browser-env-var --disable-websocket-compression --accept-server-license-terms --telemetry-level=all
+  585633 pts/2    Sl+    0:09 /home/liurun/.vscode-server/bin/c4453f8ea430795f941c1b2ff6c9321135a74a02/node /home/liurun/.vscode-server/bin/c4453f8ea430795f941c1b2ff6c9321135a74a02/out/bootstrap-fork --type=ptyHost --logsPath /home/liurun/.vscode-server/data/logs/20261109T203154
+  585676 pts/2    Sl+    0:06 /home/liurun/.vscode-server/bin/c4453f8ea430795f941c1b2ff6c9321135a74a02/node /home/liurun/.vscode-server/bin/c4453f8ea430795f941c1b2ff6c9321135a74a02/out/bootstrap-fork --type=fileWatcher
+  585739 pts/2    Sl+    0:06 /home/liurun/.vscode-server/bin/c4453f8ea430795f941c1b2ff6c9321135a74a02/node /home/liurun/.vscode-server/bin/c4453f8ea430795f941c1b2ff6c9321135a74a02/out/bootstrap-fork --type=agentHost --logsPath /home/liurun/.vscode-server/data/logs/20261109T203154 --user-data-dir /home/liurun/.vscode-server/data --telemetry-level all
+@@ -53,8 +53,8 @@
+  894065 pts/2    Sl+    0:28 /home/liurun/.vscode-server/extensions/ms-vscode.cpptools-1.35.6-linux-x64/bin/cpptools-srv 586070 {E6330E5E-E945-4080-8FCC-3E9D985F108A}
+  936975 pts/8    S+     0:00 bash testall.sh
+  936976 pts/8    S+     0:00 tee res.log
+- 937916 pts/8    S+     0:00 /usr/bin/perl ./sdriver.pl -t trace12.txt -s ./tsh -a -p
+- 937917 pts/8    S+     0:00 ./tsh -p
+- 937922 pts/8    T      0:00 ./mysplit 4
+- 937923 pts/8    T      0:00 ./mysplit 4
+- 937941 pts/8    R      0:00 /bin/ps a
++ 937942 pts/8    S+     0:00 /usr/bin/perl ./sdriver.pl -t trace12.txt -s ./tshref -a -p
++ 937943 pts/8    S+     0:00 ./tshref -p
++ 937945 pts/8    T      0:00 ./mysplit 4
++ 937946 pts/8    T      0:00 ./mysplit 4
++ 937976 pts/8    R      0:00 /bin/ps a
+=== Testing trace13.txt ===
+--- /dev/fd/63	2026-11-10 14:37:24.106221913 +0800
++++ /dev/fd/62	2026-11-10 14:37:24.106221913 +0800
+@@ -25,7 +25,7 @@
+  585633 pts/2    Sl+    0:09 /home/liurun/.vscode-server/bin/c4453f8ea430795f941c1b2ff6c9321135a74a02/node /home/liurun/.vscode-server/bin/c4453f8ea430795f941c1b2ff6c9321135a74a02/out/bootstrap-fork --type=ptyHost --logsPath /home/liurun/.vscode-server/data/logs/20261109T203154
+  585676 pts/2    Sl+    0:06 /home/liurun/.vscode-server/bin/c4453f8ea430795f941c1b2ff6c9321135a74a02/node /home/liurun/.vscode-server/bin/c4453f8ea430795f941c1b2ff6c9321135a74a02/out/bootstrap-fork --type=fileWatcher
+  585739 pts/2    Sl+    0:06 /home/liurun/.vscode-server/bin/c4453f8ea430795f941c1b2ff6c9321135a74a02/node /home/liurun/.vscode-server/bin/c4453f8ea430795f941c1b2ff6c9321135a74a02/out/bootstrap-fork --type=agentHost --logsPath /home/liurun/.vscode-server/data/logs/20261109T203154 --user-data-dir /home/liurun/.vscode-server/data --telemetry-level all
+- 585788 pts/2    Sl+   11:21 /home/liurun/.vscode-server/bin/c4453f8ea430795f941c1b2ff6c9321135a74a02/node --dns-result-order=ipv4first /home/liurun/.vscode-server/bin/c4453f8ea430795f941c1b2ff6c9321135a74a02/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=true
++ 585788 pts/2    Sl+   11:22 /home/liurun/.vscode-server/bin/c4453f8ea430795f941c1b2ff6c9321135a74a02/node --dns-result-order=ipv4first /home/liurun/.vscode-server/bin/c4453f8ea430795f941c1b2ff6c9321135a74a02/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=true
+  586070 pts/2    Sl+    1:27 /home/liurun/.vscode-server/extensions/ms-vscode.cpptools-1.35.6-linux-x64/bin/cpptools
+  586134 pts/7    Ss+    0:00 /bin/sh -c cd '/home/liurun/courses/csapp/lab/shlab-handout' && /bin/sh
+  586135 pts/7    S+     0:00 /bin/sh
+@@ -53,11 +53,11 @@
+  894065 pts/2    Sl+    0:28 /home/liurun/.vscode-server/extensions/ms-vscode.cpptools-1.35.6-linux-x64/bin/cpptools-srv 586070 {E6330E5E-E945-4080-8FCC-3E9D985F108A}
+  936975 pts/8    S+     0:00 bash testall.sh
+  936976 pts/8    S+     0:00 tee res.log
+- 937982 pts/8    S+     0:00 /usr/bin/perl ./sdriver.pl -t trace13.txt -s ./tsh -a -p
+- 937983 pts/8    S+     0:00 ./tsh -p
+- 937985 pts/8    T      0:00 ./mysplit 4
+- 937986 pts/8    T      0:00 ./mysplit 4
+- 938024 pts/8    R      0:00 /bin/ps a
++ 938055 pts/8    S+     0:00 /usr/bin/perl ./sdriver.pl -t trace13.txt -s ./tshref -a -p
++ 938056 pts/8    S+     0:00 ./tshref -p
++ 938058 pts/8    T      0:00 ./mysplit 4
++ 938060 pts/8    T      0:00 ./mysplit 4
++ 938101 pts/8    R      0:00 /bin/ps a
+ tsh> fg %1
+ tsh> /bin/ps a
+     PID TTY      STAT   TIME COMMAND
+@@ -79,7 +79,7 @@
+  585633 pts/2    Sl+    0:09 /home/liurun/.vscode-server/bin/c4453f8ea430795f941c1b2ff6c9321135a74a02/node /home/liurun/.vscode-server/bin/c4453f8ea430795f941c1b2ff6c9321135a74a02/out/bootstrap-fork --type=ptyHost --logsPath /home/liurun/.vscode-server/data/logs/20261109T203154
+  585676 pts/2    Sl+    0:06 /home/liurun/.vscode-server/bin/c4453f8ea430795f941c1b2ff6c9321135a74a02/node /home/liurun/.vscode-server/bin/c4453f8ea430795f941c1b2ff6c9321135a74a02/out/bootstrap-fork --type=fileWatcher
+  585739 pts/2    Sl+    0:06 /home/liurun/.vscode-server/bin/c4453f8ea430795f941c1b2ff6c9321135a74a02/node /home/liurun/.vscode-server/bin/c4453f8ea430795f941c1b2ff6c9321135a74a02/out/bootstrap-fork --type=agentHost --logsPath /home/liurun/.vscode-server/data/logs/20261109T203154 --user-data-dir /home/liurun/.vscode-server/data --telemetry-level all
+- 585788 pts/2    Sl+   11:21 /home/liurun/.vscode-server/bin/c4453f8ea430795f941c1b2ff6c9321135a74a02/node --dns-result-order=ipv4first /home/liurun/.vscode-server/bin/c4453f8ea430795f941c1b2ff6c9321135a74a02/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=true
++ 585788 pts/2    Sl+   11:22 /home/liurun/.vscode-server/bin/c4453f8ea430795f941c1b2ff6c9321135a74a02/node --dns-result-order=ipv4first /home/liurun/.vscode-server/bin/c4453f8ea430795f941c1b2ff6c9321135a74a02/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=true
+  586070 pts/2    Sl+    1:27 /home/liurun/.vscode-server/extensions/ms-vscode.cpptools-1.35.6-linux-x64/bin/cpptools
+  586134 pts/7    Ss+    0:00 /bin/sh -c cd '/home/liurun/courses/csapp/lab/shlab-handout' && /bin/sh
+  586135 pts/7    S+     0:00 /bin/sh
+@@ -107,6 +107,6 @@
+  894065 pts/2    Sl+    0:28 /home/liurun/.vscode-server/extensions/ms-vscode.cpptools-1.35.6-linux-x64/bin/cpptools-srv 586070 {E6330E5E-E945-4080-8FCC-3E9D985F108A}
+  936975 pts/8    S+     0:00 bash testall.sh
+  936976 pts/8    S+     0:00 tee res.log
+- 937982 pts/8    S+     0:00 /usr/bin/perl ./sdriver.pl -t trace13.txt -s ./tsh -a -p
+- 937983 pts/8    S+     0:00 ./tsh -p
+- 938054 pts/8    R      0:00 /bin/ps a
++ 938055 pts/8    S+     0:00 /usr/bin/perl ./sdriver.pl -t trace13.txt -s ./tshref -a -p
++ 938056 pts/8    S+     0:00 ./tshref -p
++ 938131 pts/8    R      0:00 /bin/ps a
+=== Testing trace14.txt ===
+trace14 PASSED
+=== Testing trace15.txt ===
+trace15 PASSED
+=== Testing trace16.txt ===
+trace16 PASSED

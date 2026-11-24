@@ -1,0 +1,39 @@
+.pos 0
+    irmovq stack, %rsp    # 必须是第一条执行的指令！
+    call main
+    halt
+
+main:
+    irmovq ele1, %rdi       # 将链表头地址作为第一个参数传给 %rdi
+    call rsum_list
+    ret
+
+rsum_list:
+	andq %rdi, %rdi
+	je	L6
+	pushq	%rbx
+	mrmovq	(%rdi), %rbx
+	mrmovq	8(%rdi), %rdi
+	call	rsum_list
+	addq	%rbx, %rax
+	popq	%rbx
+	ret
+L6:
+	irmovq	$0, %rax
+	ret
+
+# Sample linked list
+    .align 8
+ele1:
+    .quad 0x00a
+    .quad ele2
+ele2:
+    .quad 0x0b0
+    .quad ele3
+ele3:
+    .quad 0xc00
+    .quad 0
+
+# 放在代码和数据之后的安全高地址（例如 0x200）
+    .pos 0x200
+stack:

@@ -1,0 +1,47 @@
+.pos 0
+    irmovq stack, %rsp    # 必须是第一条执行的指令！
+    call main
+    halt
+
+main:
+    irmovq src, %rdi       # 将链表头地址作为第一个参数传给 %rdi
+    irmovq dest, %rsi
+    irmovq $0x3, %rdx
+    call copy_block
+    ret
+
+copy_block:
+	irmovq	$0, %rcx
+	jmp	L12
+L13:
+    irmovq  $8, %r8
+	mrmovq	(%rdi), %rax
+	rmmovq	%rax, (%rsi)
+	xorq	%rax, %rcx
+    irmovq  $1, %r9
+	subq	%r9, %rdx
+    addq    %r8, %rsi
+    addq    %r8, %rdi
+	# mrmovq	8(%rsi), %rsi
+	# mrmovq	8(%rdi), %rdi
+L12:
+	andq %rdx, %rdx
+	jg	L13
+	rrmovq	%rcx, %rax
+	ret
+
+.align 8
+# Source block
+src:
+    .quad 0x00a
+    .quad 0x0b0
+    .quad 0xc00
+# Destination block
+dest:
+    .quad 0x111
+    .quad 0x222
+    .quad 0x333
+
+# 放在代码和数据之后的安全高地址（例如 0x200）
+    .pos 0x200
+stack:
